@@ -68,15 +68,7 @@ class Program
             
             if (key.Key == ConsoleKey.W)
             {
-                _interval *= 2;
-
-                if (_interval >= General.MaxTimer)
-                {
-                    _interval = General.MaxTimer;
-                }
-                _nextStepTimer.Stop();
-                _nextStepTimer.Interval = _interval;
-                _nextStepTimer.Start();
+                SlowDownTwice();
             }
 
             if (key.Key == ConsoleKey.Spacebar)
@@ -113,6 +105,19 @@ class Program
         if (_interval <= General.MinTimer)
         {
             _interval = General.MinTimer;
+        }
+        _nextStepTimer.Stop();
+        _nextStepTimer.Interval = _interval;
+        _nextStepTimer.Start();
+    }
+
+    private static void SlowDownTwice()
+    {
+        _interval *= 2;
+
+        if (_interval >= General.MaxTimer)
+        {
+            _interval = General.MaxTimer;
         }
         _nextStepTimer.Stop();
         _nextStepTimer.Interval = _interval;
