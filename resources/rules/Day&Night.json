@@ -1,0 +1,5 @@
+{
+	"name": "Day & Night",
+	"birthRule": [ 3, 6, 7, 8 ],
+	"surviveRule": [ 3, 4, 6, 7, 8 ]
+}

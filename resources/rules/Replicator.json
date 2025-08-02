@@ -1,0 +1,5 @@
+{
+	"name": "Replicator",
+	"birthRule": [ 1, 3, 5, 7 ],
+	"surviveRule": [ 1, 3, 5, 7 ]
+}

@@ -1,0 +1,5 @@
+{
+	"name": "LongLife",
+	"birthRule": [ 3, 4, 5 ],
+	"surviveRule": [ 5 ]
+}
