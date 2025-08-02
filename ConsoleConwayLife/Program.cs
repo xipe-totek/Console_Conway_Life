@@ -63,15 +63,7 @@ class Program
             
             if (key.Key == ConsoleKey.Q)
             {
-                _interval /= 2;
-
-                if (_interval <= General.MinTimer)
-                {
-                    _interval = General.MinTimer;
-                }
-                _nextStepTimer.Stop();
-                _nextStepTimer.Interval = _interval;
-                _nextStepTimer.Start();
+                SpeedUpTwice();
             }
             
             if (key.Key == ConsoleKey.W)
@@ -114,6 +106,19 @@ class Program
         }
     }
 
+    private static void SpeedUpTwice()
+    {
+        _interval /= 2;
+
+        if (_interval <= General.MinTimer)
+        {
+            _interval = General.MinTimer;
+        }
+        _nextStepTimer.Stop();
+        _nextStepTimer.Interval = _interval;
+        _nextStepTimer.Start();
+    }
+    
     private static void NextStepTimerOnElapsed(object? sender, ElapsedEventArgs e)
     {
         _lifeLogic.NextStep(Console.WindowWidth, Console.WindowHeight);
